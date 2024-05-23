@@ -754,7 +754,7 @@ input:focus, textarea:focus {
 
     .inicio {
         flex-direction: column-reverse;
-        padding: 100px 80px;
+        padding: 100px 50px;
         text-align: center;
         gap: 0px;
     }
@@ -841,6 +841,23 @@ input:focus, textarea:focus {
     }
     .proyectos__repositorio{
         flex-direction: column;
+    }
+    .carrusel__propuesta{
+        background: none;
+    }
+    .carrusel__propuesta img{
+        width: 280px;
+    }
+    .carrusel__propuesta img:first-child {
+        margin-left: 0px;
+    }
+    
+    .carrusel__propuesta img:last-child {
+        margin-right: 0px;
+    }
+    .carrusel__flyers img{
+        width: 100%;
+        object-fit: scale-down;
     }
     .conocimientos__content{
         margin: 50px 0px;
