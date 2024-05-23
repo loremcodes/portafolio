@@ -288,14 +288,13 @@ header.scroll,
 }
 
 .proyectos__card {
-    height: 300px;
     margin: 50px 0px;
     display: flex;
 }
 
 .card__proyecto {
     width: 400px;
-    height: 300px;
+    height: auto;
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -328,7 +327,7 @@ header.scroll,
     box-sizing: content-box;
 }
 .pantallas img {
-    height: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -820,6 +819,7 @@ input:focus, textarea:focus {
 
     .card__proyecto-responsive {
         width: 100%;
+        height: auto;
         display: flex;
         justify-content: center;
         flex-direction: column;
