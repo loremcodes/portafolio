@@ -710,6 +710,7 @@ input:focus, textarea:focus {
     }
     .nav_responsive-button {
         width: 100%;
+        height: 30px;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -717,7 +718,7 @@ input:focus, textarea:focus {
     .nav_responsive-button h1{
         font-size: 14px;
     }
-    .nav_responsive-button a svg{
+    .nav_responsive-button .icon-bars{
         width: 20px;
         fill: rgb(255, 255, 255, 0.3);
     }
@@ -728,7 +729,7 @@ input:focus, textarea:focus {
         flex-direction: column;
         position: absolute;
         z-index: -1;
-        margin-top: 45px;
+        margin-top: 42px;
         font-size: 14px;
     }
 
@@ -748,11 +749,6 @@ input:focus, textarea:focus {
         text-decoration: none;
         margin-left: 50px;
         padding: 10px 0px;
-    }
-    .icon-bars {
-        width: 30px;
-        height: 30px;
-        fill: #fff;
     }
 
     .inicio {
@@ -926,9 +922,6 @@ input:focus, textarea:focus {
     .carrusel__propuesta{
         background: none;
     }
-    .carrusel__propuesta img{
-        width: 280px;
-    }
     .carrusel__propuesta img:first-child {
         margin-left: 0px;
     }
@@ -936,7 +929,8 @@ input:focus, textarea:focus {
     .carrusel__propuesta img:last-child {
         margin-right: 0px;
     }
-    .carrusel__flyers img{
+    .carrusel__propuesta img,
+    .carrusel__flyers img, .carrusel__flyers-propio img{
         width: 100%;
         object-fit: scale-down;
     }

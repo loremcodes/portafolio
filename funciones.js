@@ -12,6 +12,7 @@ document.getElementById("nav_responsive-button").addEventListener("click", funct
     const menuItems = document.querySelector(".nav_li-container");
     const menuBoton = document.querySelector(".nav_responsive-ul");
     const nav = document.querySelector(".nav");
+    const bars = document.querySelector(".icon-bars");
     
     // Verificar si el menú está visible
     if (menuItems.style.display === "flex") {
@@ -20,6 +21,7 @@ document.getElementById("nav_responsive-button").addEventListener("click", funct
         // Restaurar el color de fondo original
         menuBoton.style.background = "transparent";
         nav.style.background = "transparent";
+        bars.style.fill = "rgb(255, 255, 255, 0.3)";
     } else {
         // Si está oculto, mostrarlo
         menuItems.style.display = "flex";
@@ -27,7 +29,7 @@ document.getElementById("nav_responsive-button").addEventListener("click", funct
         // Cambiar el color de fondo
         menuBoton.style.background = "var(--color-nav)";
         nav.style.background = "var(--color-nav)";
-
+        bars.style.fill = "var(--color-amarillo-oscuro)";
     }
 
 });
