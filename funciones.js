@@ -8,6 +8,29 @@ window.addEventListener("scroll", function () {
     });
 });
 
+document.getElementById("nav_responsive-button").addEventListener("click", function() {
+    const menuItems = document.querySelector(".nav_li-container");
+    const menuBoton = document.querySelector(".nav_responsive-ul");
+    const nav = document.querySelector(".nav");
+    
+    // Verificar si el menú está visible
+    if (menuItems.style.display === "flex") {
+        // Si está visible, ocultarlo
+        menuItems.style.display = "none";
+        // Restaurar el color de fondo original
+        menuBoton.style.background = "transparent";
+        nav.style.background = "transparent";
+    } else {
+        // Si está oculto, mostrarlo
+        menuItems.style.display = "flex";
+        menuItems.style.background = "var(--color-nav)";
+        // Cambiar el color de fondo
+        menuBoton.style.background = "var(--color-nav)";
+        nav.style.background = "var(--color-nav)";
+
+    }
+
+});
 
 function mostrarInformacion(id) {
     // Ocultar todas las secciones de información

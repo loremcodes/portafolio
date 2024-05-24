@@ -685,9 +685,76 @@ input:focus, textarea:focus {
         padding: 60px;
         box-sizing: border-box;
     }
+    .nav{
+        padding: 0px;
+    }
+    .nav h1{
+        font-size: 0px;
+    }
     .nav__ul{
         display: none;
     }
+
+    .nav_responsive-ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        background-color: none;
+        padding: 12px 50px;
+    }
+    .nav_responsive-ul h1{
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+    .nav_responsive-button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    .nav_responsive-button h1{
+        font-size: 14px;
+    }
+    .nav_responsive-button a svg{
+        width: 20px;
+        fill: rgb(255, 255, 255, 0.3);
+    }
+
+    .nav_li-container {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: -1;
+        margin-top: 45px;
+        font-size: 14px;
+    }
+
+    .nav_responsive-li {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: var(--color-nav);
+        cursor: pointer;
+        margin-left: -50px;
+    }
+
+    .nav_responsive-li:hover {
+        background-color: var(--color-amarillo-oscuro);
+    }
+    .nav_responsive-li a{
+        display: block;
+        text-decoration: none;
+        margin-left: 50px;
+        padding: 10px 0px;
+    }
+    .icon-bars {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+    }
+
     .inicio {
         gap: 50px;
     }
@@ -745,8 +812,9 @@ input:focus, textarea:focus {
         padding: 50px;
         box-sizing: border-box;
     }
-    .nav h1{
-        font-size: 16px;
+
+    .nav_responsive-ul h1{
+        font-size: 14px;
     }
     .sobremi__title,
     .proyectos__title,
