@@ -63,7 +63,8 @@ header.scroll,
     background-color: var(--color-nav);
 }
 
-.nav h1 {
+.nav h1,
+.nav__li a {
     color: rgb(255, 255, 255, 0.3);
 }
 
@@ -76,13 +77,22 @@ header.scroll,
     padding: 15px;
     list-style-type: none;
     box-sizing: border-box;
-    color: rgb(255, 255, 255, 0.3);
 }
 
 .nav__li a {
     text-decoration: none;
 }
-.nav_responsive-ul{
+
+.nav__li a:hover {
+    color: #ffff;
+    transition: 0.2s all;
+}
+
+.nav__li a.active {
+    color: #ffffff;
+}
+
+.nav_responsive-ul {
     display: none;
 }
 
@@ -323,9 +333,11 @@ header.scroll,
 .card__proyecto .icons img {
     width: 50px;
 }
-.card__proyecto .pantallas{
+
+.card__proyecto .pantallas {
     box-sizing: content-box;
 }
+
 .pantallas img {
     height: 300px;
     object-fit: cover;
@@ -537,21 +549,10 @@ header.scroll,
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 50px;
-    border-radius: 50px;
-    /*border: 2px solid var(--color-nav);*/
+    margin: 80px 0px;
     background: linear-gradient(var);
     gap: 25px;
 }
-
-/*.contacto__content .p{
-    margin: 30px;
-    text-align: center;
-}
-.contacto__content .p p{
-    margin: 10px;
-    color: rgb(255, 255, 255, 0.5);
-}*/
 
 .content__form {
     display: flex;
@@ -575,59 +576,8 @@ header.scroll,
             rgba(255, 255, 255, 1),
             rgba(27, 40, 50, 0.049),
             rgba(27, 40, 50, 0));
-    /* Gradiente de máscara */
 }
 
-/*.contacto__form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1;
-}
-.contacto__form input{
-    width: 800px;
-    height: 25px;
-    padding: 25px 20px;
-    border-radius: 15px;
-    border: 3px solid var(--color-lila);
-    position: relative;
-    background-color: var(--color-fondo);
-    box-sizing: border-box;
-}
-input:focus, textarea:focus {
-    box-shadow: 0px 0px 10px 1px var(--color-celeste);
-    outline: none; 
-    transition: 0.5s all;
-}
-.contacto textarea{
-    width: 800px;
-    padding: 25px 20px;
-    border-radius: 15px;
-    border: 3px solid var(--color-lila);
-    background-color: var(--color-fondo);
-    box-sizing: border-box;
-    resize: none;
-    overflow: hidden;
-}
-.contacto__button{
-    display: flex;
-    justify-content: center;
-}
-.contacto__form button{
-    padding: 20px 100px;
-    background-color: var(--color-amarillo-oscuro);
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    color: rgb(255, 255, 255, 0.3);
-    margin-top: 10px;
-}
-.contacto__form button:hover{
-    background-color: var(--color-lila);
-    box-shadow: 0px 0px 15px 1px var(--color-nav);
-    color: #ffff;
-    transition: 1s;
-}f*/
 .footer {
     height: 70px;
     padding: 0px 60px;
@@ -685,13 +635,16 @@ input:focus, textarea:focus {
         padding: 60px;
         box-sizing: border-box;
     }
-    .nav{
+
+    .nav {
         padding: 0px;
     }
-    .nav h1{
+
+    .nav h1 {
         font-size: 0px;
     }
-    .nav__ul{
+
+    .nav__ul {
         display: none;
     }
 
@@ -703,11 +656,13 @@ input:focus, textarea:focus {
         background-color: none;
         padding: 12px 50px;
     }
-    .nav_responsive-ul h1{
+
+    .nav_responsive-ul h1 {
         font-size: 16px;
         display: flex;
         align-items: center;
     }
+
     .nav_responsive-button {
         width: 100%;
         height: 30px;
@@ -715,10 +670,12 @@ input:focus, textarea:focus {
         justify-content: space-between;
         position: relative;
     }
-    .nav_responsive-button h1{
+
+    .nav_responsive-button h1 {
         font-size: 14px;
     }
-    .nav_responsive-button .icon-bars{
+
+    .nav_responsive-button .icon-bars {
         width: 20px;
         fill: rgb(255, 255, 255, 0.3);
     }
@@ -744,7 +701,8 @@ input:focus, textarea:focus {
     .nav_responsive-li:hover {
         background-color: var(--color-amarillo-oscuro);
     }
-    .nav_responsive-li a{
+
+    .nav_responsive-li a {
         display: block;
         text-decoration: none;
         margin-left: 50px;
@@ -794,7 +752,8 @@ input:focus, textarea:focus {
     .sobremi__content .first__parrafo {
         width: 100%;
     }
-    .conocimientos__content{
+
+    .conocimientos__content {
         margin: 50px;
     }
 }
@@ -809,9 +768,10 @@ input:focus, textarea:focus {
         box-sizing: border-box;
     }
 
-    .nav_responsive-ul h1{
+    .nav_responsive-ul h1 {
         font-size: 14px;
     }
+
     .sobremi__title,
     .proyectos__title,
     .conocimientos__title,
@@ -821,6 +781,7 @@ input:focus, textarea:focus {
         font-size: 30px;
         font-weight: 900;
     }
+
     .proyectos__subtitle {
         font-size: 20px;
     }
@@ -892,68 +853,84 @@ input:focus, textarea:focus {
         border-radius: 20px;
         background: linear-gradient(rgba(0, 109, 163, 0.1) 20%, rgba(46, 46, 255, 0.1), rgba(147, 5, 255, 0.1));
     }
+
     .card__proyecto-responsive img {
         width: 100%;
         border-radius: 20px 20px 0px 0px;
     }
-    .responsive__content{
+
+    .responsive__content {
         padding: 30px 20px;
     }
+
     .responsive__content h3 {
         text-align: center;
         margin-bottom: 15px;
     }
-    .responsive__content p{
+
+    .responsive__content p {
         font-size: 14px;
     }
+
     .responsive__content .icons {
         display: flex;
         justify-content: center;
         flex: 1;
         margin-top: 30px;
     }
-    
+
     .responsive__content .icons img {
         width: 50px;
     }
-    .proyectos__repositorio{
+
+    .proyectos__repositorio {
         flex-direction: column;
     }
-    .carrusel__propuesta{
+
+    .carrusel__propuesta {
         background: none;
     }
+
     .carrusel__propuesta img:first-child {
         margin-left: 0px;
     }
-    
+
     .carrusel__propuesta img:last-child {
         margin-right: 0px;
     }
+
     .carrusel__propuesta img,
-    .carrusel__flyers img, .carrusel__flyers-propio img{
+    .carrusel__flyers img,
+    .carrusel__flyers-propio img {
         width: 100%;
         object-fit: scale-down;
     }
-    .conocimientos__content{
+
+    .conocimientos__content {
         margin: 50px 0px;
     }
+
     .contacto__content img {
         width: 150px;
         align-self: center;
     }
+
     .content__form p {
         max-width: none;
         text-align: center;
         font-size: 14px;
     }
-    .content__form{
+
+    .content__form {
         flex-direction: column;
     }
-    .redes-sociales{
+
+    .redes-sociales {
         justify-content: center;
         margin: 20px;
     }
-    .proyectos__repositorio a{
+
+    .proyectos__repositorio a {
         width: 10em;
         padding: 5px 10px;
     }

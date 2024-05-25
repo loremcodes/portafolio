@@ -2,10 +2,63 @@ window.addEventListener("scroll", function () {
     var header = document.querySelector("header");
     header.classList.toggle("scroll", window.scrollY > 0);
     
-    const menuItems = document.querySelectorAll(".nav__li");
+    /*const menuItems = document.querySelectorAll(".nav__li a");
     menuItems.forEach(item => {
         item.style.color = "#ffff";
+    });*/
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".nav__li a");
+
+    function activateLink(clickedLink) {
+        navLinks.forEach(navLink => {
+            navLink.classList.remove("active");
+            navLink.style.color = ""; // Restablece el color predeterminado
+        });
+        clickedLink.classList.add("active");
+        clickedLink.style.color = "#ffffff";
+    }
+
+    // Marca el primer enlace como activo por defecto
+    if (navLinks.length > 0) {
+        activateLink(navLinks[0]);
+    }
+
+    // Añade evento de clic a todos los enlaces
+    navLinks.forEach(navLink => {
+        navLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+            activateLink(navLink);
+            const targetId = navLink.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
     });
+
+    // Cambiar la sección activa al detectar el cambio de sección
+    const sections = document.querySelectorAll("section");
+
+    function onScroll() {
+        let currentSection = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - 100) { // Ajusta este valor si es necesario
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(navLink => {
+            navLink.classList.remove("active");
+            navLink.style.color = ""; // Restablece el color predeterminado
+            if (navLink.getAttribute("href").includes(currentSection)) {
+                navLink.classList.add("active");
+                navLink.style.color = "#ffffff";
+            }
+        });
+    }
+
+    window.addEventListener("scroll", onScroll);
 });
 
 document.getElementById("nav_responsive-button").addEventListener("click", function() {
