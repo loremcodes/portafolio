@@ -298,12 +298,14 @@ header.scroll,
 }
 
 .proyectos__card {
+    width: 100%;
     margin: 50px 0px;
     display: flex;
+    overflow: hidden;
 }
 
 .card__proyecto {
-    width: 400px;
+    min-width: 400px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -328,18 +330,20 @@ header.scroll,
     display: flex;
     justify-content: center;
     flex: 1;
+    margin-top: 20px;
 }
 
 .card__proyecto .icons img {
     width: 50px;
 }
 
-.card__proyecto .pantallas {
+.proyectos__card .pantallas {
+    max-height: 300px;
     box-sizing: content-box;
 }
 
 .pantallas img {
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -755,6 +759,18 @@ header.scroll,
 
     .conocimientos__content {
         margin: 50px;
+    }
+    .proyectos__card{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card__proyecto{
+        max-width: 650px;
+        margin-right: 0px;
+    }
+    .pantallas{
+        margin-top: 50px;
+        height: 200px;
     }
 }
 
